@@ -1,4 +1,4 @@
-package com.bridgelabz.FunctionalPrograms;
+package com.bridgelabz.functionalPrograms;
 
 import java.util.Scanner;
 /**
@@ -16,11 +16,11 @@ static boolean isEmpty = true;
 static void initBoard() {
 	System.out.println("TIC TAC TOE GAME\nComputer player X\nHuman Player 0 ");
 	for (int i = 0; i < BOARD.length; i++) {
-		for (int j = 0; j < BOARD[i].length; j++) {
-			BOARD[i][j] = -10;
+		for (int j = 0; j < BOARD.length; j++) {
+			BOARD[i][j] =-10;
 		}
 	}
-	dispBoard();
+dispBoard();
 }
 /**
  * display board to enter values
@@ -30,7 +30,7 @@ static void dispBoard() {
 	for (int i = 0; i < BOARD.length; i++) {
 		System.out.println("---------------");
 		System.out.print("||");
-		for (int j = 0; j < BOARD[i].length; j++) {
+		for (int j = 0; j < BOARD.length; j++) {
 			if (BOARD[i][j] == 0) {
 				count++;
 				System.out.print(" 0 |");
@@ -52,8 +52,7 @@ static void dispBoard() {
  * * generate random value and use it as input 
  */
 static void putVal() {
-	int i;
-	int j;
+	int i,j;
 	if (player % 2 == 1) {
 		i = (int) (Math.random() * 10)% 3;
 		j = (int) (Math.random() * 10)% 3;
@@ -68,7 +67,7 @@ static void putVal() {
 			BOARD[i][j] = 0;
 		} else {
 			BOARD[i][j] = 1;
-			System.out.println("Coumputer Choosing " + i + " " + j);
+			System.out.println("Computer Choosing " + i + " " + j);
 		}
 	} else
 		putVal();
@@ -92,7 +91,7 @@ initBoard();
 		if (win()) {
 			System.out.println("Human Player won");
 			return;
-		}
+	 }
 		player = 1;
 		System.out.println("Computers turn");
 		putVal();
@@ -102,9 +101,8 @@ initBoard();
 			return;
 		}
 		player = 0;
-	}
+	}	
 }
-
 public static void main(String[] args) {
 	play();
   }

@@ -1,4 +1,4 @@
-package com.bridgelabz.FunctionalPrograms;
+package com.bridgelabz.functionalPrograms;
 
 import com.bridgelabz.utility.Utility;
 
@@ -12,7 +12,7 @@ import com.bridgelabz.utility.Utility;
  *
  */
 public class WindChill {
-      public static void main(String[] args) {
+      public static void main(java.lang.String[] args) {
 	  double t=Double.parseDouble(args[0]);
 	  double v=Double.parseDouble(args[1]);
 	  Utility.getTemprature(t, v);

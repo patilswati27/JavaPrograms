@@ -1,4 +1,4 @@
-package com.bridgelabz.FunctionalPrograms;
+package com.bridgelabz.functionalPrograms;
 
 import com.bridgelabz.utility.Utility;
 
@@ -11,7 +11,7 @@ public class FlipCoin {
 	public static void main(String[] args) {
 		System.out.println("Enter number ");
 		int number=Utility.inputInteger();
-		System.out.println(number);
+		//System.out.println(number);
 		Utility.flipCoin(number);
 	   }
 	}

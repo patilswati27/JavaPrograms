@@ -1,4 +1,4 @@
-package com.bridgelabz.FunctionalPrograms;
+package com.bridgelabz.functionalPrograms;
 
 import com.bridgelabz.utility.Utility;
 
