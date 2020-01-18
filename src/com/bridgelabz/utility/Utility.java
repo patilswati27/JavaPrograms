@@ -267,7 +267,6 @@ public class Utility {
 		double distance = Math.sqrt((Math.pow(x, x) + Math.pow(y, y)));
 		System.out.println("distance from (" + x + ", " + y + ") to (0, 0) = " + distance);
 	}
-
 	/**
 	 * @param permutation function
 	 * @param str string to calculate permutation using recursive approach
@@ -285,7 +284,6 @@ public class Utility {
 			}
 		}
 	}
-
 	/**
 	 * Swap Characters at position
 	 * 
@@ -302,7 +300,6 @@ public class Utility {
 		array[j] = temp;
 		return String.valueOf(array);
 	}
-
 	/**
 	 * permutation function using iterative method
 	 * 
@@ -332,23 +329,20 @@ public class Utility {
 		}
 		return Arrays.toString(array);
 	}
-
 	/**
 	 * getting current time and return it
 	 */
 	public static long startwatch() {
 		return System.nanoTime();
 	}
-
 	/**
 	 * @return elapsed time
 	 */
 	public static long elapsedTime(long start) {
 		long stop = System.nanoTime();
-		System.out.println(stop);
+		//System.out.println(stop);
 		return (stop - start);
 	}
-
 	/**
 	 * Give root of x for a*x*x*+b*x+c
 	 */

@@ -5,7 +5,7 @@ import com.bridgelabz.utility.Utility;
 public class StopWatch {
 
 	public static void main(String[] args) {
-		long start=Utility.startwatch();
+		int start=(int) Utility.startwatch();
 		//System.out.println(start);
 		try {
 			Thread.sleep(9000);;

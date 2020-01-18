@@ -8,11 +8,11 @@ import com.bridgelabz.utility.Utility;
  */
 public class CalDistance {
 	public static void main(String[] args) {
-		/*
-		 * int x = Integer.parseInt(args[0]); int y = Integer.parseInt(args[1]);
-		 * 
-		 * // System.out.println("first arg is "+x); Utility.getDistance(x, y);
-		 */
+	int x = Integer.parseInt(args[0]); 
+	int y = Integer.parseInt(args[1]);
+		System.out.println("first arg is "+x); 
+		Utility.getDistance(x, y);
+		 
 
 	}
 }
