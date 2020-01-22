@@ -9,6 +9,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * @author swati
+ * read file and display output whether string is present or not
+ *
+ */
 public class WordSearch {
 	static Scanner sc = new Scanner(System.in);
 

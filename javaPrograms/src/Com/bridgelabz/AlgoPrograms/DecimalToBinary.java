@@ -1,7 +1,8 @@
 package Com.bridgelabz.AlgoPrograms;
 
 /**
- * @author swati converts decimal no to binary form
+ * @author swati 
+ * converts decimal no to binary form
  *
  */
 public class DecimalToBinary {

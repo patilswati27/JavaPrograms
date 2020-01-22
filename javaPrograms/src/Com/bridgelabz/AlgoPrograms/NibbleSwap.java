@@ -1,5 +1,9 @@
 package Com.bridgelabz.AlgoPrograms;
 
+/**
+ * @author swati
+ * get binary no swap its nibble and display its decimal no
+ */
 public class NibbleSwap {
 	public static void nibbleSwap(int[] arr) {
 		int i = 0, j = 4;

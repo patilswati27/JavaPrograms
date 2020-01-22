@@ -2,7 +2,10 @@ package Com.bridgelabz.AlgoPrograms;
 
 import com.bridgelabz.utility.Utility;
 
-public class SearchMethods {
+/**
+ * @author swati display output of all sorts methods and binary search method
+ */
+public class SortingMethods {
 
 	public static void main(String[] args) {
 		int[] arr = { 7, 3, 4, 6, 8, 9, 11, 1, 12, 19 };
@@ -19,7 +22,7 @@ public class SearchMethods {
 		System.out.println("elapsed time for integerBinarySearch " + Utility.elapsedTime(Start));
 		System.out.println("output of StringBinarySearch method");
 		int Start1 = (int) Utility.startwatch();
-		System.out.println("string present at " + Util.stringBinarySearch(array, 0, array.length - 1, "ab"));
+		System.out.println("string present at " + Util.stringBinarySearch(array, 0, array.length - 1, "c"));
 		System.out.println("elapsed time for StringBinarySearch " + Utility.elapsedTime(Start1));
 
 	}

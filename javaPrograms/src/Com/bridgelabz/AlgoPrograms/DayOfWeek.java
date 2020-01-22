@@ -2,6 +2,11 @@ package Com.bridgelabz.AlgoPrograms;
 
 import com.bridgelabz.utility.Utility;
 
+/**
+ * @author swati
+ * According to provided input return day of the week
+ *
+ */
 public class DayOfWeek {
 
 	public static void main(String[] args) {

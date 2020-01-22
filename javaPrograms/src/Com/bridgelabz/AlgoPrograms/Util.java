@@ -3,6 +3,7 @@ package Com.bridgelabz.AlgoPrograms;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -13,6 +14,10 @@ import java.util.stream.Stream;
 
 import com.bridgelabz.utility.Utility;
 
+/**
+ * @author swati
+ * 
+ */
 public class Util {
 
 	/**
@@ -21,25 +26,15 @@ public class Util {
 	 */
 	static boolean isAnagram(String string1, String string2) {
 		boolean status;
-		// Predicate<String>p=s->string1.length() != string2.length();
-		if (string1.length() != string2.length()) {
-			status = false;
-		} else {
-			/*
-			 * Stream<Object>array=list.stream().map(s->s.toLowerCase().toCharArray());
-			 * System.out.println(array);
-			 * 
-			 * Function<String,int[]> f1=s->string1.toLowerCase().toCharArray();
-			 * Function<String,int[]> f2=s->string2.toLowerCase().toCharArray();
-			 */
+		BiPredicate<String, String> p = (s1, s2) -> (s1.length() != s2.length());
+		p.test(string1, string2);
+		status = false;
+		char[] array = string1.toLowerCase().toCharArray();
+		char[] array1 = string2.toLowerCase().toCharArray();
+		Arrays.sort(array);
+		Arrays.sort(array1);
+		status = Arrays.equals(array, array1);
 
-			char[] array = string1.toLowerCase().toCharArray();
-			char[] array1 = string2.toLowerCase().toCharArray();
-            Arrays.sort(array);
-			Arrays.sort(array1);
-			status = Arrays.equals(array, array1);
-
-		}
 		if (status) {
 			System.out.println(string1 + " and " + string2 + " are anagram");
 		} else {
@@ -90,6 +85,11 @@ public class Util {
 			for (int j = i + 1; j < arr.size(); j++) {
 				if (isAnagram(String.valueOf(arr.get(i)), String.valueOf(arr.get(j))))
 
+					/*
+					 * Consumer<Integer> c=s->System.out.println(""+arr.get(i) + " and " +
+					 * arr.get(j)+" "); c.accept(s);
+					 */
+
 					System.out.print("[" + arr.get(i) + " and " + arr.get(j) + "] ");
 			}
 		}
@@ -122,7 +122,7 @@ public class Util {
 	/**
 	 * @param It will get String array, start index, end index and key Give index of
 	 *           key value of which will find in array
-	 * @return
+	 * @return index of key value
 	 */
 	static int stringBinarySearch(String[] arr, int start, int last, String key) {
 		while (start <= last) {
@@ -161,9 +161,7 @@ public class Util {
 		System.out.print("BubbleSort array ");
 		for (int no : arr) {
 			System.out.print(no + " ");
-
 		}
-
 		System.out.println();
 		System.out.println("elapsed time for bubbleSortInt " + Utility.elapsedTime(Start));
 
@@ -221,6 +219,7 @@ public class Util {
 	 */
 	public static String[] insertionSortStr(String[] arr, int start, int end) {
 		int Start = (int) Utility.startwatch();
+
 		for (int i = 1; i <= end; i++)
 			for (int j = i - 1; j >= 0; j--) {
 				if (arr[j].hashCode() > arr[j + 1].hashCode()) {
@@ -236,6 +235,60 @@ public class Util {
 		System.out.println();
 		System.out.println("elapsed time for insertionSortStr " + Utility.elapsedTime(Start));
 		return arr;
+	}
+
+	/**
+	 * @param Arr
+	 * @param start
+	 * @param mid
+	 * @param end   Merge small array together
+	 */
+	static void merge(int Arr[], int start, int mid, int end) {
+
+		// create a temp array
+		int temp[] = new int[end - start + 1];
+		int i = start, j = mid + 1, k = 0;
+
+		// traverse both arrays and in each iteration add smaller of both elements in
+		// temp
+		while (i <= mid && j <= end) {
+			if (Arr[i] <= Arr[j]) {
+				temp[k] = Arr[i];
+				k++;
+				i++;
+			} else {
+				temp[k] = Arr[j];
+				k += 1;
+				j += 1;
+			}
+		}
+		while (i <= mid) {
+			temp[k] = Arr[i];
+			k++;
+			i++;
+		}
+		while (j <= end) {
+			temp[k] = Arr[j];
+			k++;
+			j++;
+		}
+		for (i = start; i <= end; i++) {
+			Arr[i] = temp[i - start];
+		}
+	}
+
+	/**
+	 * @param Arr start and end are the starting and ending index of current
+	 *            interval of Arr
+	 */
+	public static void mergeSort(int Arr[], int start, int end) {
+
+		if (start < end) {
+			int mid = (start + end) / 2;
+			mergeSort(Arr, start, mid);
+			mergeSort(Arr, mid + 1, end);
+			merge(Arr, start, mid, end);
+		}
 	}
 
 	/**
@@ -265,9 +318,12 @@ public class Util {
 		double rate = r / (12 * 100);
 		double payment = p * rate / (1 - Math.pow((1 + rate), -n));
 		return payment;
-
 	}
 
+	/**
+	 * @param decimal no
+	 * @return binary no
+	 */
 	static int[] toBinary(int no) {
 		if (no < 0) {
 			throw new IllegalArgumentException("Enter Only positive decimal number");
@@ -287,6 +343,10 @@ public class Util {
 
 	}
 
+	/**
+	 * @param binary no
+	 * @return decimal no
+	 */
 	static int toDecimal(int[] arr) {
 		int dec = 0;
 		int j = 7;

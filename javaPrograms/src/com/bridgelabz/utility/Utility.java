@@ -124,7 +124,7 @@ public class Utility {
 	 * @param stake  is actual amount
 	 * @param goal
 	 * @param trials is no of attempts Simulates a gambler who start with $stake to
-	 *        reach $goal.
+	 *               reach $goal.
 	 */
 	public static void gambler(int stake, int goal, int trials) {
 		int won = 0;
@@ -224,9 +224,8 @@ public class Utility {
 	/**
 	 * @param <T>
 	 * @param arrays
-	 * @param row 
-	 * @param col 
-	 * generic method to display array of all types
+	 * @param row
+	 * @param col    generic method to display array of all types
 	 */
 	public static <T> void printArray(T[][] arrays, int rows, int col) {
 		PrintWriter writer = new PrintWriter(System.out);
@@ -267,11 +266,12 @@ public class Utility {
 		double distance = Math.sqrt((Math.pow(x, x) + Math.pow(y, y)));
 		System.out.println("distance from (" + x + ", " + y + ") to (0, 0) = " + distance);
 	}
+
 	/**
 	 * @param permutation function
-	 * @param str string to calculate permutation using recursive approach
-	 * @param x starting index
-	 * @param y end index
+	 * @param str         string to calculate permutation using recursive approach
+	 * @param x           starting index
+	 * @param y           end index
 	 */
 	public static void permute(int x, int y, String str) {
 		if (x == y) {
@@ -284,6 +284,7 @@ public class Utility {
 			}
 		}
 	}
+
 	/**
 	 * Swap Characters at position
 	 * 
@@ -300,6 +301,7 @@ public class Utility {
 		array[j] = temp;
 		return String.valueOf(array);
 	}
+
 	/**
 	 * permutation function using iterative method
 	 * 
@@ -329,20 +331,23 @@ public class Utility {
 		}
 		return Arrays.toString(array);
 	}
+
 	/**
 	 * getting current time and return it
 	 */
 	public static long startwatch() {
 		return System.nanoTime();
 	}
+
 	/**
 	 * @return elapsed time
 	 */
 	public static long elapsedTime(long start) {
 		long stop = System.nanoTime();
-		//System.out.println(stop);
+		// System.out.println(stop);
 		return (stop - start);
 	}
+
 	/**
 	 * Give root of x for a*x*x*+b*x+c
 	 */
@@ -393,6 +398,5 @@ public class Utility {
 		System.out.println("Random no required " + count);
 		System.out.println("Coupon Code: " + Coupon);
 	}
-
 
 }

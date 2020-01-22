@@ -23,11 +23,13 @@ public class VendingMachine {
 	public static void main(String[] args) {
 
 		int change = Integer.parseInt(args[0]);
-		int notes[] = { 1000, 500, 100, 50, 10, 2, 1 };
+		if(change<0) {
+			 throw new IllegalArgumentException("Only Positive Numbers & no Letters Please!");
+		}
+		int notes[] = {1000, 500, 100, 50, 10, 2, 1 };
 		int noteCount[] = new int[notes.length];
 		returnNotes(noteCount, change, 0);
 		int count = 0;
-
 		for (int i = 0; i < notes.length; i++) {
 			if (noteCount[i] != 0) {
 				System.out.println(notes[i] + " Rs note= " + noteCount[i]);

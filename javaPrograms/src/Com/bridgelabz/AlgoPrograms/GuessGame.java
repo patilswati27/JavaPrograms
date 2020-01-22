@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 import com.bridgelabz.utility.Utility;
 
+/**
+ * @author swati
+ * 
+ */
 public class GuessGame {
 	static Scanner sc = new Scanner(System.in);
 
